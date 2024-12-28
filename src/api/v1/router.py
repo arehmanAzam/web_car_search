@@ -44,9 +44,15 @@ async def search_cars_xml(
 ):
     car_service = CarService(db)
     cars = car_service.search_cars(criteria)
-    
+    cars_data = [{
+        'id': car.id,
+        'length': car.length,
+        'weight': car.weight,
+        'velocity': car.velocity,
+        'color': car.color
+    } for car in cars]
     xml_data = dicttoxml(
-        [car.dict() for car in cars], 
+        cars_data, 
         custom_root='cars', 
         attr_type=False
     )
