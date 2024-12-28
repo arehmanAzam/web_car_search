@@ -7,7 +7,7 @@ from src.models.models import Base, Car
 from src.schemas.car import CarBase, CarSearchCriteria
 
 # Test database setup
-SQLALCHEMY_DATABASE_URL = "postgresql://abdul:Rehman123@localhost:5432/car_search_test"
+SQLALCHEMY_DATABASE_URL = "postgresql://abdul:Rehman123@localhost:5432/car_search"
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
