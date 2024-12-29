@@ -109,17 +109,25 @@ curl -X POST "http://localhost:8000/api/v1/cars" \
 ### Searching Cars (JSON Response)
 
 ```bash
-curl -X POST "http://localhost:8000/api/v1/cars/search" \
-     -H "Content-Type: application/json" \
-     -d '{"length": 4.5, "color": "red"}'
+curl -X POST "http://localhost:8000/api/v1/cars/search/" -H "Content-Type: application/json" -d \
+'{
+   "min_length": 4.0,
+   "max_length": 5.0,
+   "min_weight": 1200,
+   "max_weight": 1800,
+   "color": "red"
+}''
 ```
 
 ### Searching Cars (XML Response)
 
 ```bash
-curl -X POST "http://localhost:8000/api/v1/cars/search/xml" \
-     -H "Content-Type: application/json" \
-     -d '{"length": 4.5, "color": "red"}'
+curl -X POST "http://localhost:8000/api/v1/cars/search/xml" -H "Content-Type: application/json" -d
+'{
+   "min_velocity": 150,
+   "max_velocity": 250,
+   "color": "blue"
+}'
 ```
 
 ### Deleting a Car
