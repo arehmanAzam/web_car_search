@@ -23,22 +23,7 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib
 ```
 
-Configure the PostgreSQL user and database by executing these commands:
-
-```bash
-sudo -u postgres psql
-
-# In PostgreSQL prompt:
-CREATE USER abdul WITH PASSWORD 'Rehman123';
-ALTER USER abdul WITH CREATEDB;
-CREATE DATABASE car_search OWNER abdul;
-\c car_search
-ALTER SCHEMA public OWNER TO abdul;
-GRANT ALL PRIVILEGES ON DATABASE car_search TO abdul;
-GRANT ALL PRIVILEGES ON SCHEMA public TO abdul;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO abdul;
-\q
-```
+Configure the PostgreSQL user and database.
 
 Create the required database table structure:
 
@@ -81,11 +66,6 @@ DB_PORT=5432
 
 ### Test Configuration
 
-Install the required testing dependencies:
-
-```bash
-pip install pytest pytest-cov httpx
-```
 
 Create a `pytest.ini` file in the project root:
 
