@@ -148,7 +148,6 @@ car_search/
 ├── config/
 │   ├── database.py
 │   └── settings.py
-├── utils/
 ├── tests/
 │   ├── conftest.py
 │   ├── test_api.py
